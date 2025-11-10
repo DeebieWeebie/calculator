@@ -1,1 +1,52 @@
 /* stylesheet for calculator project */
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(
+        rgb(20, 20, 20), 
+        grey, 
+        rgb(20, 20, 20));
+    width: 40vw;
+    height: 60vh;
+    margin: 10vh auto;
+    padding: 5px;
+    min-width: 300px;
+    max-width: 400px;
+    min-height: 450px;
+    max-height: 475px;
+    border: solid;
+    border-color: black;
+    border-radius: 8px;
+}
+
+.display-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    background-image: linear-gradient(
+        rgba(120, 185, 245, 0.788),
+        rgba(25, 144, 255, 0.788),
+        rgba(120, 185, 245, 0.788));
+    width: 96%;
+    height: 20%;
+    border-radius: inherit;
+}
+
+.display__window {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    background-image: linear-gradient(
+        white, 
+        rgb(191, 219, 241), 
+        white);
+    width: 90%;
+    height: 55%;
+    border: solid;   
+    border-color: black;
+    border-radius: 8px;
+}
