@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
     background-image: linear-gradient(
         rgb(20, 20, 20), 
         grey, 
@@ -40,13 +41,38 @@
     display: flex;
     flex-direction: row;
     align-self: center;
+    align-items: flex-end;
     background-image: linear-gradient(
         white, 
         rgb(191, 219, 241), 
-        white);
+        white
+    );
     width: 90%;
     height: 55%;
     border: solid;   
     border-color: black;
     border-radius: 8px;
+}
+
+.display__clear {
+    align-self: flex-end;
+    border-radius: 4px;
+    margin-right: 5%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    height: 80%;
+    background-image: linear-gradient(
+        rgba(120, 185, 245, 0.788),
+        rgba(25, 144, 255, 0.788),
+        rgba(120, 185, 245, 0.788)
+    );
+    border-radius: 8px;
+}
+
+.input__numeric {
+
 }
