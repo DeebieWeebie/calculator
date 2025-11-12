@@ -14,22 +14,20 @@
     margin: 10vh auto;
     padding: 5px;
     min-width: 300px;
-    max-width: 400px;
+    max-width: 350px;
     min-height: 450px;
     max-height: 475px;
     border: solid black;
     border-radius: 8px;
 }
 
-.display-container,
-.input-container {
+.display-container {
     display: flex;
     flex-direction: column;
     background: linear-gradient(
         rgba(120, 185, 245, 0.788),
         rgba(25, 144, 255, 0.788),
         rgba(120, 185, 245, 0.788));
-    width: 96%;
     border-radius: inherit;
 }
 
@@ -38,6 +36,7 @@
     align-items: center;
     gap: 3px;
     height: 20%;
+    width: 96%;
 }
 
 .display__window {
@@ -65,8 +64,88 @@
 .input-container {
     height: 80%;
     border-radius: 8px;
+    width: 96%;
+    display: flex;
+    flex-direction: row; 
+    gap: 3px;
+    
 }
 
-.input__numeric {
+.input__left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: linear-gradient(
+        rgba(120, 185, 245, 0.788),
+        rgba(25, 144, 255, 0.788),
+        rgba(120, 185, 245, 0.788)
+    );
+    border-radius: inherit;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.input__right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: linear-gradient(
+        rgba(120, 185, 245, 0.788),
+        rgba(25, 144, 255, 0.788),
+        rgba(120, 185, 245, 0.788)
+    );
+    border-radius: inherit;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 225px;
+}
+
+.input__left {
+    width: 90%;
+    
+}
+
+.input__right {
+    width: 30%;
+
+
+}
+
+.input__bottom {
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    border-radius: inherit;
+}
+
+.input__numeric, .input__backspace, .input__operator {
+   margin: 5px;
+   border: none;
+   font-size: 26px;
+   color: black;
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   box-shadow: -5px -5px 10px rgba(128, 128, 128, 0.7), 
+    5px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.input__numeric, .input__backspace {
+    background-color: lightskyblue;
+    background-image: linear-gradient(
+        to bottom, white 0%, #83f3f3 50%, #63b9b9 100%
+    );
+}
+
+.input__operator, .input__equality {
+    background-color: rgb(5, 247, 5);
+    background-image: linear-gradient(
+        to bottom, #d0f8c3 0%, #93f774 50%, #3ef506 100%
+    );
+}
+
+.input__equality {
+    font-size: 26px;
+    color: black;
+    border-radius: 8px;
 }
