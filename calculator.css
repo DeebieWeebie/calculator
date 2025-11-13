@@ -50,7 +50,7 @@
         white
     );
     width: 90%;
-    height: 55%;   
+    height: 50%;   
     border:solid black;
     border-radius: 8px;
 }
@@ -67,7 +67,7 @@
     width: 96%;
     display: flex;
     flex-direction: row; 
-    gap: 3px;
+    gap: 8px;
     
 }
 
@@ -81,7 +81,7 @@
         rgba(120, 185, 245, 0.788)
     );
     border-radius: inherit;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -96,7 +96,7 @@
     );
     border-radius: inherit;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     max-width: 225px;
 }
 
