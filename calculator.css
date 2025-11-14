@@ -102,13 +102,10 @@
 
 .input__left {
     width: 90%;
-    
 }
 
 .input__right {
     width: 30%;
-
-
 }
 
 .input__bottom {
@@ -118,7 +115,7 @@
     border-radius: inherit;
 }
 
-.input__numeric, .input__backspace, .input__operator {
+.input__numeric, .input__backspace, .input__operator, .input__decimal{
    margin: 5px;
    border: none;
    font-size: 26px;
@@ -130,7 +127,7 @@
     5px 5px 10px rgba(0, 0, 0, 0.7);
 }
 
-.input__numeric, .input__backspace {
+.input__numeric, .input__backspace, .input__decimal {
     background-color: lightskyblue;
     background-image: linear-gradient(
         to bottom, white 0%, #83f3f3 50%, #63b9b9 100%
