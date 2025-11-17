@@ -7,8 +7,10 @@ let roundDecimalPlaces = 6;
 let firstNumber = null;  
 let operator = null;
 let displayValue = "";
-let isReadyForNewInput = false;  // set to true after the operator is pressed
-                                
+let isReadyForNextNumber = false;  // set to true after the operator is pressed
+                                // pressing an operator switches this to true
+                                // when a 1st number exists.
+
 const displayWindow = document.querySelector(".display__window");
 const inputLeft = document.querySelector(".input__left");
 const inputRight = document.querySelector(".input__right");
@@ -18,15 +20,15 @@ const clearButton = document.querySelector(".display__clear");
 function updateDisplay() {
     if (displayValue === "") {
         displayWindow.textContent = "0";  // user always sees 0 when calulator 
-    } else {                                
+    } else {                               // display has been cleared 
         displayWindow.textContent = displayValue;
     }
 }
 
 function handleInputDigit(digit) {
-    if (isReadyForNewInput === true) {   // this means operator was pressed &
-        displayValue = digit;           // displays digit pressed
-        isReadyForNewInput = false;     // turns isReadyForNewInput to false
+    if (isReadyForNextNumber === true) {   // this means operator was pressed &
+        displayValue = digit;           // displays next digit pressed as 2nd #
+        isReadyForNextNumber = false;     // turns isReadyForNewInput to false
     } else {                            //                         
         if (displayValue === "0") {     // if display value is zero, sets the
             displayValue = digit;       // display value to the digit entered
@@ -38,7 +40,7 @@ function handleInputDigit(digit) {
 }
 
 function handleInputDecimal(dot) {
-    if (isReadyForNewInput === true) {
+    if (isReadyForNextNumber === true) {
         alert("When entering a non-integer value like 0.2, you must type the zero first")
         return;                         // if an operator has been pressed & 
     }                                   // then a decimal, the user is asked to
@@ -59,8 +61,11 @@ function handleOperator(nextOperator) {
     if (firstNumber === null) {
         firstNumber = displayValue;
     }
-    
-    if (firstNumber !== null && operator !== null && !isReadyForNewInput) {
+    // isReadyForNew input is false if user has finished entering a 2nd number
+    // and pressed another operator.  !isReadyForNewInput is !false = true, so
+    // the secondNumber is stored and numbers 1 & 2 are evaluated and displayed.
+
+    if (firstNumber !== null && operator !== null && !isReadyForNextNumber) {
         secondNumber = parseFloat(displayValue);
         let result = operate(operator, parseFloat(firstNumber), secondNumber);
         
@@ -68,16 +73,16 @@ function handleOperator(nextOperator) {
         updateDisplay();
         
         firstNumber = String(result); // Result becomes the new starting number
-        isReadyForNewInput = true;
+        isReadyForNextNumber = true;
     }
 
     operator = nextOperator;
-    isReadyForNewInput = true;
+    isReadyForNextNumber = true;
     updateDisplay();
 }
 
 function handleEquals() {
-    if (firstNumber !== null && operator !== null && !isReadyForNewInput) {
+    if (firstNumber !== null && operator !== null && !isReadyForNextNumber) {
         secondNumber = parseFloat(displayValue);
         let result = operate(operator, parseFloat(firstNumber), secondNumber);
         
@@ -86,7 +91,7 @@ function handleEquals() {
         
         firstNumber = String(result); 
         operator = null; 
-        isReadyForNewInput = true;
+        isReadyForNextNumber = true;
     }
 }
 
@@ -94,7 +99,7 @@ clearButton.addEventListener("click", function(event) {
     firstNumber = null;
     operator = null;
     displayValue = "";
-    isReadyForNewInput = false;
+    isReadyForNextNumber = false;
     updateDisplay();
 });
 
@@ -155,8 +160,10 @@ let operate = function(operator, a, b) {
         return subtract(a, b);
     } else if (operator === "*") {
         return multiply(a, b);
-    }   else if (operator === "/") {
+    } else if (operator === "/" && b !== 0) {
         return divide(a, b);
+    } else if (operator === "/" && b == 0) {
+        alert("You cannot divide by zero! Press clear to start over!");
     }
 }
 
