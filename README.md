@@ -42,7 +42,8 @@ subtraction, multiplication and division of a single pair of numbers at a time.
 ### Lessons Learned
 - I need much more practice using JavaScript Boolean variables.
 - My BEM naming is possibly too long and slightly nested (input__operator is 
-  named after parent input block and not input__right, per se)
+  named after parent input block and not input__right, per se).
+- I need to practice switch statements.  It might make my code easier to read.
 
 #### Links
 - Project homepage: https://deebieweebie.github.io/calculator/
