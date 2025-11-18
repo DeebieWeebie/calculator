@@ -45,10 +45,4 @@ subtraction, multiplication and division of a single pair of numbers at a time.
   named after parent input block and not input__right, per se)
 
 #### Links
-- Project homepage: https://your.github.com/awesome-project/
-- Repository: https://github.com/your/awesome-project/
-- Issue tracker: https://github.com/your/awesome-project/issues
-  - In case of sensitive bugs like security vulnerabilities, please contact
-    my@email.com directly instead of using issue tracker. We value your effort
-    to improve the security and privacy of this project!
-- Related projects:
+- Project homepage: https://deebieweebie.github.io/calculator/
