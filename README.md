@@ -6,7 +6,7 @@
 This is an onscreen calculator that will do typical math such as addition,
 subtraction, multiplication and division of a single pair of numbers at a time.
 
-## Basic TOP Instructioons
+## Basic TOP Instructions
 - The calculator should have basic math operators (+, -, x, and ÷). Create 
   functions for the 4 math functions.
 
