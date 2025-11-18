@@ -1,7 +1,4 @@
 // Calculator JS //
-//  Pressing “clear” should wipe out any existing data. Make sure the user is 
-// really starting fresh after pressing “clear”. Display a snarky error message 
-// if the user tries to divide by 0… and don’t let it crash your calculator!
 
 let roundDecimalPlaces = 6;
 let firstNumber = null;  
